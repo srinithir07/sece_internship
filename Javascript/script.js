@@ -58,3 +58,41 @@ fetch_api
     .then(data => console.log(data))
     .catch(err => console.log(err));
 
+let emp = [
+    {
+        emp_id: 100,
+        emp_name: "Sachin",
+        salary: 50000,
+        skills: ["python", "java", "html", "css"]
+    },
+    {
+        emp_id: 101,
+        emp_name: "Kohli",
+        salary: 60000,
+        company: {
+            c1: "TCS",
+            c2: "Infosys",
+            c3: "Google",
+            c4: "Microsoft",
+            c5: "Amazon"
+        }
+    }
+];
+
+//console.log(emp[0].skills[1]);
+//console.log(emp[1].company.c1);
+let stringidy_data = JSON.stringify(emp);
+console.log(stringidy_data);
+let parse_data = JSON.parse(stringidy_data);
+console.log(parse_data);
+
+//let copied_data = emp;
+//copied_data.salary = 80000;
+//Shallow Copy(using spread operator)
+//let copied_data = [...emp];
+//copied_data[1].salary = 80000;
+//copied_data.company.c1 ="Google"
+//Deep Copy
+let copied_data = JSON.parse(JSON.stringify(emp));
+copied_data[1].company.c1 = "Google";
+console.log(emp[1].company.c1);

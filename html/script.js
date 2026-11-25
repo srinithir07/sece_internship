@@ -58,3 +58,26 @@ fetch_api
     .then(data => console.log(data))
     .catch(err => console.log(err));
 
+let emp = [
+    {
+        emp_id: 100,
+        emp_name: "Sachin",
+        salary: 50000,
+        skills: ["python", "java", "html", "css"]
+    },
+    {
+        emp_id: 101,
+        emp_name: "Kohli",
+        salary: 60000,
+        company: {
+            c1: "TCS",
+            c2: "Infosys",
+            c3: "Google",
+            c4: "Microsoft",
+            c5: "Amazon"
+        }
+    }
+];
+
+console.log(emp[0].skills[1]);
+console.log(emp[1].company.c1);
